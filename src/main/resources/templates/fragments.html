@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:fragment="head">
+    <meta charset="UTF-8"/>
+    <title>Crud Notes</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+    <script th:src="@{/script.js}"></script>
+</head>
+<body>
+
+<nav th:fragment="header">
+    <h1 th:text="${title}">Crud Notes</h1>
+    <ul>
+        <li><a href="/notes">All Notes</a></li>
+        <li><a href="/notes/create">Create Note</a></li>
+    </ul>
+</nav>
+
+</body>
+</html>
