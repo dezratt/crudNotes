@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-<body>
+<body class="container">
 
 <header th:replace="fragments :: header"></header>
 
-<ul>
-    <th:block th:each="note : ${notes}">
-        <li th:text="${note}"></li>
-    </th:block>
-</ul>
+<table class="table table-striped table-dark">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tr th:each="note : ${notes}">
+        <td th:text="${note.id}"></td>
+        <td th:text="${note.name}"></td>
+        <td th:text="${note.description}"></td>
+    </tr>
+</table>
 
 </body>
 </html>

@@ -1,5 +1,6 @@
-package org.launchcode.codingevents.controllers;
+package org.launchcode.crudnotes.controllers;
 
+import org.launchcode.crudnotes.models.Note;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,7 @@ import java.util.List;
 @RequestMapping("notes")
 public class NoteController {
 
-    private static List<String> notes = new ArrayList<>();
+    private static List<Note> notes = new ArrayList<>();
 
     @GetMapping
     public String displayAllNotes(Model model) {
@@ -31,8 +32,9 @@ public class NoteController {
     }
 
     @PostMapping("create")
-    public String processCreateNoteForm(@RequestParam String noteName) {
-        notes.add(noteName);
+    public String processCreateNoteForm(@RequestParam String noteName,
+                                        @RequestParam String noteDescription) {
+        notes.add(new Note(noteName, noteDescription));
         return "redirect:";
     }
 

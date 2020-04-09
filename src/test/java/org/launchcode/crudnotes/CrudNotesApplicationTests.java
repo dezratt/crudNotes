@@ -1,4 +1,4 @@
-package org.launchcode.codingevents;
+package org.launchcode.crudnotes;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package org.launchcode.codingevents.controllers;
+package org.launchcode.crudnotes.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

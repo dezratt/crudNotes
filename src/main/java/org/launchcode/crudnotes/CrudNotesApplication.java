@@ -1,4 +1,4 @@
-package org.launchcode.codingevents;
+package org.launchcode.crudnotes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
