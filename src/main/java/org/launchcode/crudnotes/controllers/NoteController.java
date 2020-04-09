@@ -1,12 +1,10 @@
 package org.launchcode.crudnotes.controllers;
 
+import org.launchcode.crudnotes.data.NoteData;
 import org.launchcode.crudnotes.models.Note;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,12 +14,10 @@ import java.util.List;
 @RequestMapping("notes")
 public class NoteController {
 
-    private static List<Note> notes = new ArrayList<>();
-
     @GetMapping
     public String displayAllNotes(Model model) {
         model.addAttribute("title", "All Notes");
-        model.addAttribute("notes", notes);
+        model.addAttribute("notes", NoteData.getAll());
         return "notes/index";
     }
 
@@ -32,10 +28,26 @@ public class NoteController {
     }
 
     @PostMapping("create")
-    public String processCreateNoteForm(@RequestParam String noteName,
-                                        @RequestParam String noteDescription) {
-        notes.add(new Note(noteName, noteDescription));
+    public String processCreateNoteForm(@ModelAttribute Note newNote) {
+        NoteData.add(newNote);
         return "redirect:";
     }
 
+    @GetMapping("delete")
+    public String displayDeleteNoteForm(Model model) {
+    model.addAttribute("title", "Delete Notes");
+    model.addAttribute("notes", NoteData.getAll());
+    return "notes/delete";
+    }
+
+    @PostMapping("delete")
+    public String processDeleteNotesForm(@RequestParam(required = false) int[] noteIds) {
+
+        if(noteIds != null) {
+            for (int id : noteIds) {
+                NoteData.remove(id);
+            }
+        }
+        return "redirect:";
+    }
 }
