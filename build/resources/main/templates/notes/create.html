@@ -7,14 +7,22 @@
 
 <form method="post">
     <div class="form-group">
-        <label>Name
-            <input type="text" name="name" class="form-control">
+        <label>School Name
+            <input th:field="${note.name}" class="form-control">
         </label>
+        <p class="error" th:errors="${note.name}"></p>
     </div>
     <div class="form-group">
         <label>Description
-            <input type="text" name="description" class="form-control">
+            <input th:field="${note.description}" class="form-control">
         </label>
+        <p class="error" th:errors="${note.description}"></p>
+    </div>
+    <div class="form-group">
+        <label>Study Note
+            <input th:field="${note.studyNote}" class="form-control">
+        </label>
+        <p class="error" th:errors="${note.studyNote}"></p>
     </div>
     <div class="form-group">
         <input type="submit" value="Create" class="btn btn-dark">

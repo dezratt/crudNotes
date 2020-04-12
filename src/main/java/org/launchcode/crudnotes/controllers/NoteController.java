@@ -4,8 +4,10 @@ import org.launchcode.crudnotes.data.NoteData;
 import org.launchcode.crudnotes.models.Note;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,11 +26,17 @@ public class NoteController {
     @GetMapping("create")
     public String displayCreateNoteForm(Model model) {
         model.addAttribute("title", "Create Note");
+        model.addAttribute(new Note());
         return "notes/create";
     }
 
     @PostMapping("create")
-    public String processCreateNoteForm(@ModelAttribute Note newNote) {
+    public String processCreateNoteForm(@ModelAttribute @Valid Note newNote,
+                                        Errors errors, Model model) {
+        if(errors.hasErrors()) {
+            model.addAttribute("title", "Create Note");
+            return "notes/create";
+        }
         NoteData.add(newNote);
         return "redirect:";
     }
