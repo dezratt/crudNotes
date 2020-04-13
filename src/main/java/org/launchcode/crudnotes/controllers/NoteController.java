@@ -2,6 +2,7 @@ package org.launchcode.crudnotes.controllers;
 
 import org.launchcode.crudnotes.data.NoteData;
 import org.launchcode.crudnotes.models.Note;
+import org.launchcode.crudnotes.models.NoteType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -27,6 +28,7 @@ public class NoteController {
     public String displayCreateNoteForm(Model model) {
         model.addAttribute("title", "Create Note");
         model.addAttribute(new Note());
+        model.addAttribute("types", NoteType.values());
         return "notes/create";
     }
 

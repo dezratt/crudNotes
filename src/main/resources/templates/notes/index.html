@@ -12,6 +12,7 @@
             <th>Name</th>
             <th>Description</th>
             <th>Study Notes</th>
+            <th>Type</th>
         </tr>
     </thead>
     <tr th:each="note : ${notes}">
@@ -19,6 +20,7 @@
         <td th:text="${note.name}"></td>
         <td th:text="${note.description}"></td>
         <td th:text="${note.studyNote}"></td>
+        <td th:text="${note.type.displayName}"></td>
     </tr>
 </table>
 

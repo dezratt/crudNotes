@@ -20,15 +20,21 @@ public class Note {
     @Size(min=1, max = 1000, message = "Must be between 1 and 1000 characters!")
     private String studyNote;
 
-    public Note(String name, String description, String studyNote) {
+    private NoteType type;
+
+    public Note(String name, String description, String studyNote, NoteType type) {
+        this();
         this.name = name;
         this.description = description;
         this.studyNote = studyNote;
+        this.type = type;
+
+    }
+
+    public Note() {
         this.id = nextId;
         nextId++;
     }
-
-    public Note() {}
 
     public String getName() {
         return name;
@@ -52,6 +58,14 @@ public class Note {
 
     public void setStudyNote(String studyNote) {
         this.studyNote = studyNote;
+    }
+
+    public NoteType getType() {
+        return type;
+    }
+
+    public void setType(NoteType type) {
+        this.type = type;
     }
 
     public int getId() {
