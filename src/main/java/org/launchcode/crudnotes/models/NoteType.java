@@ -1,5 +1,4 @@
 package org.launchcode.crudnotes.models;
-
 public enum NoteType {
 
     SHORTANSWER("Short-Answer"),
@@ -17,3 +16,4 @@ public enum NoteType {
         return displayName;
     }
 }
+
