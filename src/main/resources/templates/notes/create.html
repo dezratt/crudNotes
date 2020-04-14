@@ -13,14 +13,14 @@
         <p class="error" th:errors="${note.name}"></p>
     </div>
     <div class="form-group">
-        <label>Description
-            <input th:field="${note.description}" class="form-control">
+        <label>Question
+            <textarea th:field="${note.description}" class="form-control" rows="2.5" cols="37.5"></textarea>
         </label>
         <p class="error" th:errors="${note.description}"></p>
     </div>
     <div class="form-group">
         <label>Study Note
-            <input th:field="${note.studyNote}" class="form-control">
+            <textarea th:field="${note.studyNote}" class="form-control" rows="5" cols="75"></textarea>
         </label>
         <p class="error" th:errors="${note.studyNote}"></p>
     </div>

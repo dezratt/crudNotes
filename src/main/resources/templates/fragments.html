@@ -9,12 +9,12 @@
 </head>
 <body>
 
-<nav th:fragment="header">
-    <h1 th:text="${title}">Crud Notes</h1>
-    <ul class="nav">
-        <li class="nav-item"><a class="nav-link" href="/notes">All Notes</a></li>
-        <li class="nav-item"><a class="nav-link" href="/notes/create">Create Note</a></li>
-        <li class="nav-item"><a class="nav-link" href="/notes/delete">Delete Notes</a></li>
+<nav th:fragment="header" class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <h1 th:text="${title}" class="text-light">Crud Notes</h1>
+    <ul class="navbar-nav">
+        <li class="nav-item active"><a class="nav-link" href="/notes">All Notes</a></li>
+        <li class="nav-item active"><a class="nav-link" href="/notes/create">Create Note</a></li>
+        <li class="nav-item active"><a class="nav-link" href="/notes/delete">Delete Notes</a></li>
     </ul>
 </nav>
 
