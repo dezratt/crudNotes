@@ -1,13 +1,13 @@
 package org.launchcode.crudnotes.models;
 
+import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.util.Objects;
 
-public class Note {
 
-    private int id;
-    private static int nextId = 1;
+@Entity
+public class Note extends AbstractEntity{
+
 
     @NotBlank(message = "Can't be blank!")
     @Size(min = 10, max = 50, message = "Type your full school name out!")
@@ -23,7 +23,6 @@ public class Note {
     private NoteType type;
 
     public Note(String name, String description, String studyNote, NoteType type) {
-        this();
         this.name = name;
         this.description = description;
         this.studyNote = studyNote;
@@ -31,10 +30,7 @@ public class Note {
 
     }
 
-    public Note() {
-        this.id = nextId;
-        nextId++;
-    }
+    public Note() {}
 
     public String getName() {
         return name;
@@ -68,25 +64,10 @@ public class Note {
         this.type = type;
     }
 
-    public int getId() {
-        return id;
-    }
 
     @Override
     public String toString() {
         return name;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Note note = (Note) o;
-        return id == note.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
 }

@@ -2,12 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23f2a9d4-0096-499a-8458-f3f0efc8c6e7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/crudnotes/controllers/NoteCategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/crudnotes/data/NoteCategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/crudnotes/data/NoteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/crudnotes/models/AbstractEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/crudnotes/models/NoteCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/noteCategories/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/noteCategories/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.0/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.0/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.0/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.0/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.0/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.0/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.0/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/notes/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/notes/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/notes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/notes/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/crudnotes/controllers/NoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/crudnotes/controllers/NoteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/crudnotes/data/NoteData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/crudnotes/models/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/crudnotes/models/Note.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/notes/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/notes/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/notes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/notes/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,9 +81,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
-        <option value="HTML File" />
         <option value="Enum" />
+        <option value="Interface" />
+        <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -87,12 +110,12 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="coding-events [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="crudNotes [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -101,14 +124,14 @@
             <option value="bootRun" />
           </list>
         </option>
-        <option name="vmOptions" />
+        <option name="vmOptions" value="" />
       </ExternalSystemSettings>
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.coding-events [bootRun]" />
+        <item itemvalue="Gradle.crudNotes [bootRun]" />
       </list>
     </recent_temporary>
   </component>
@@ -172,7 +195,21 @@
       <option name="project" value="LOCAL" />
       <updated>1586809937861</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="got bored and added styling for nice effects. Tried making dark theme for most elements.">
+      <created>1586831024479</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1586831024479</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Connecting application to database, added new data interface. removed old data interface">
+      <created>1587054197057</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1587054197057</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -195,6 +232,9 @@
     <MESSAGE value="added delete not functionality and refactored model binding" />
     <MESSAGE value="Added model validation to handle user error. Error messages added, with coloring" />
     <MESSAGE value="added enum drop down menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="added enum drop down menu" />
+    <MESSAGE value="got bored and added styling for nice effects" />
+    <MESSAGE value="got bored and added styling for nice effects. Tried making dark theme for most elements." />
+    <MESSAGE value="Connecting application to database, added new data interface. removed old data interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="Connecting application to database, added new data interface. removed old data interface" />
   </component>
 </project>

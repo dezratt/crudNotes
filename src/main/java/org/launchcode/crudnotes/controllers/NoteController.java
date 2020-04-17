@@ -1,26 +1,28 @@
 package org.launchcode.crudnotes.controllers;
 
-import org.launchcode.crudnotes.data.NoteData;
+import org.launchcode.crudnotes.data.NoteRepository;
 import org.launchcode.crudnotes.models.Note;
 import org.launchcode.crudnotes.models.NoteType;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @Controller
 @RequestMapping("notes")
 public class NoteController {
 
+    @Autowired
+    private NoteRepository noteRepository;
+
     @GetMapping
     public String displayAllNotes(Model model) {
         model.addAttribute("title", "All Notes");
-        model.addAttribute("notes", NoteData.getAll());
+        model.addAttribute("notes", noteRepository.findAll());
         return "notes/index";
     }
 
@@ -39,14 +41,14 @@ public class NoteController {
             model.addAttribute("title", "Create Note");
             return "notes/create";
         }
-        NoteData.add(newNote);
+        noteRepository.save(newNote);
         return "redirect:";
     }
 
     @GetMapping("delete")
     public String displayDeleteNoteForm(Model model) {
     model.addAttribute("title", "Delete Notes");
-    model.addAttribute("notes", NoteData.getAll());
+    model.addAttribute("notes", noteRepository.findAll());
     return "notes/delete";
     }
 
@@ -55,7 +57,7 @@ public class NoteController {
 
         if(noteIds != null) {
             for (int id : noteIds) {
-                NoteData.remove(id);
+                noteRepository.deleteById(id);
             }
         }
         return "redirect:";
