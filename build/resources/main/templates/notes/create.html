@@ -14,24 +14,25 @@
     </div>
     <div class="form-group">
         <label>Question
-            <textarea th:field="${note.description}" class="form-control" rows="2.5" cols="37.5"></textarea>
+            <textarea th:field="${note.noteDetails.description}" class="form-control" rows="2.5" cols="37.5"></textarea>
         </label>
-        <p class="error" th:errors="${note.description}"></p>
+        <p class="error" th:errors="${note.noteDetails.description}"></p>
     </div>
     <div class="form-group">
         <label>Study Note
-            <textarea th:field="${note.studyNote}" class="form-control" rows="5" cols="75"></textarea>
+            <textarea th:field="${note.noteDetails.studyNote}" class="form-control" rows="5" cols="75"></textarea>
         </label>
-        <p class="error" th:errors="${note.studyNote}"></p>
+        <p class="error" th:errors="${note.noteDetails.studyNote}"></p>
     </div>
     <div class="form-group">
         <label>Type
-        <select th:field="${note.type}">
-            <option th:each="type : ${types}"
-                    th:value="${type}"
-                    th:text="${type.displayName}"
+        <select th:field="${note.noteCategory}">
+            <option th:each="noteCategory : ${categories}"
+                    th:value="${noteCategory.id}"
+                    th:text="${noteCategory.name}"
             ></option>
         </select>
+            <p class="error" th:errors="${note.noteCategory}"></p>
         </label>
     </div>
     <div class="form-group">

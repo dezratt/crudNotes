@@ -1,8 +1,9 @@
 package org.launchcode.crudnotes.controllers;
 
+import org.launchcode.crudnotes.data.NoteCategoryRepository;
 import org.launchcode.crudnotes.data.NoteRepository;
 import org.launchcode.crudnotes.models.Note;
-import org.launchcode.crudnotes.models.NoteType;
+import org.launchcode.crudnotes.models.NoteCategory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +11,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 
 @Controller
@@ -19,10 +21,26 @@ public class NoteController {
     @Autowired
     private NoteRepository noteRepository;
 
+    @Autowired
+    private NoteCategoryRepository noteCategoryRepository;
+
     @GetMapping
-    public String displayAllNotes(Model model) {
-        model.addAttribute("title", "All Notes");
-        model.addAttribute("notes", noteRepository.findAll());
+    public String displayAllNotes(@RequestParam(required = false) Integer categoryId, Model model) {
+
+        if (categoryId == null) {
+            model.addAttribute("title", "All Notes");
+            model.addAttribute("notes", noteRepository.findAll());
+        } else {
+            Optional<NoteCategory> result = noteCategoryRepository.findById(categoryId);
+            if(result.isEmpty()) {
+                model.addAttribute("title", "Invalid Category ID: " + categoryId);
+            } else {
+                NoteCategory category = result.get();
+                model.addAttribute("title", "Notes in category: " + category.getName());
+                model.addAttribute("notes", category.getNotes());
+            }
+        }
+
         return "notes/index";
     }
 
@@ -30,7 +48,7 @@ public class NoteController {
     public String displayCreateNoteForm(Model model) {
         model.addAttribute("title", "Create Note");
         model.addAttribute(new Note());
-        model.addAttribute("types", NoteType.values());
+        model.addAttribute("categories", noteCategoryRepository.findAll());
         return "notes/create";
     }
 

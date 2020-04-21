@@ -1,32 +1,34 @@
 package org.launchcode.crudnotes.models;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 
 @Entity
 public class Note extends AbstractEntity{
 
-
     @NotBlank(message = "Can't be blank!")
-    @Size(min = 10, max = 50, message = "Type your full school name out!")
+    @Size(min = 4, max = 50, message = "Type your full school name out!")
     private String name;
 
-    @Size(max = 500, message = "Description too long!")
-    private String description;
+    @OneToOne(cascade = CascadeType.ALL)
+    @Valid
+    @NotNull
+    private NoteDetails noteDetails;
 
-    @NotBlank(message = "Need a note to study!")
-    @Size(min=1, max = 1000, message = "Must be between 1 and 1000 characters!")
-    private String studyNote;
+    @ManyToOne
+    @NotNull(message = "Type is required")
+    private NoteCategory noteCategory;
 
-    private NoteType type;
-
-    public Note(String name, String description, String studyNote, NoteType type) {
+    public Note(String name, NoteCategory noteCategory) {
         this.name = name;
-        this.description = description;
-        this.studyNote = studyNote;
-        this.type = type;
+        this.noteCategory = noteCategory;
 
     }
 
@@ -40,30 +42,21 @@ public class Note extends AbstractEntity{
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public NoteCategory getNoteCategory() {
+        return noteCategory;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setNoteCategory(NoteCategory noteCategory) {
+        this.noteCategory = noteCategory;
     }
 
-    public String getStudyNote() {
-        return studyNote;
+    public NoteDetails getNoteDetails() {
+        return noteDetails;
     }
 
-    public void setStudyNote(String studyNote) {
-        this.studyNote = studyNote;
+    public void setNoteDetails(NoteDetails noteDetails) {
+        this.noteDetails = noteDetails;
     }
-
-    public NoteType getType() {
-        return type;
-    }
-
-    public void setType(NoteType type) {
-        this.type = type;
-    }
-
 
     @Override
     public String toString() {
