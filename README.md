@@ -4,18 +4,28 @@ Study sharing application built in Spring, with ThymeLeaf, hibernate, and MySQL
 INSTRUCTIONS TO GET WORKING ON LOCAL MACHINE:
 
 1.) you will need the latest version of MySQL
+
 2.) you will need Java13 or higher
+
 3.) create a new schema in MySQL and name it crudnotes
+
 4.) create a user named crudnotes in said schema and grant them all permissions
+
 5.) change the password in the applications.properties file to whatever your MySQL root password is.
+
 6.) at this point the application should be able to boot locally from the gradle/tasks/application/bootrun source
+
 
 INSTRUCTIONS ON HOW TO USE APP
 
 1.) start by registering a new user and password
+
 2.) next create a new note type.
+
 3.) create a new note.
+
 4.) all functions will now be working in app.
+
 
 
 Copyright 2020 David Ezratty
